@@ -14,14 +14,45 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- *
- * @package local
- * @subpackage tics331
- * @copyright 2012-onwards Jorge Villalon <jorge.villalon@uai.cl>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-// PLUGIN MINIMUM STRINGS.
+//English version 
 $string ['pluginname'] = 'Foundastic!';
 $string ['name'] = 'Foundastic!';
-$string['slogan']= 'Donde las buenas ideas se crean';
+$string['slogan']= 'Where good ideas can be built';
+$string['question']='What is Foundastic?';
+$string['descp']= 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.
+   Curabitur feugiat feugiat purus.
+   Aenean eu metus. Nulla facilisi.
+   Pellentesque quis justo vel massa suscipit sagittis.
+   Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+   per inceptos hymenaeos.
+   Quisque mollis, justo vel rhoncus aliquam, urna tortor varius lacus, 
+   ut tincidunt metus arcu vel lorem.
+   Praesent metus orci, adipiscing eget, fermentum ut, pellentesque non, 
+   dui.
+   Sed sagittis, metus a semper dictum, sem 
+   libero sagittis nunc, vitae adipiscing leo neque vitae tellus.
+   Duis quis orci quis nisl nonummy dapibus.
+   Etiam ante. Phasellus imperdiet arcu at odio.
+   In hac habitasse platea dictumst. Aenean metus.
+   Quisque a nibh. Morbi mattis ullamcorper ipsum.
+   Nullam odio urna, feugiat sed, bibendum sed, vulputate in, magna.
+   Nulla tortor justo, convallis iaculis, porta condimentum, interdum 
+   nec, arcu.
+   Proin lectus purus, vehicula et, cursus ut, nonummy et, diam.';
+$string ['inicio'] = 'Home';
+$string ['explorar'] = 'Explore';
+
+$string['tit-aproy']= 'Build a Proyect';
+$string['nom-aproy']= 'Name';
+$string['des-aproy']= 'Description';
+$string['img-aproy']= 'Imagen Upload';
+$string['vid-aproy']= 'Video Upload';
+$string['sav-aproy']= 'Save';
+$string['del-aproy']= 'Delete All';
+
+$string['searchb']= 'Enter the text you want to find and press ENTER. To cancel the ESCAPE key.';
+$string['next']= 'Next';
+$string['previous']= 'Previous';
+
+$string["startproj"] = 'Start a Project';
+$string["seeproj"] = 'Find new Projects';

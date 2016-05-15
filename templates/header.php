@@ -1,4 +1,7 @@
 <link rel="stylesheet" type="text/css" href="templates/css/style.css" />
+ <link rel="stylesheet" type="text/css" href="js/ext/webmonsterTooltip/css/webmonster.Tooltip.css">
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 <?php
 //MENU
 echo '<div id="encabezado">';
@@ -12,8 +15,8 @@ echo '</div>';
 echo '<div id="navegador">';
 echo '<ul>';
 
-echo '<li><a href="'.$CFG->wwwroot."/local/gim/index.php".'">Inicio</a></li>';
-echo '<li><a href="'.$CFG->wwwroot."/local/gim/projects.php".'">Explorar</a></li>';
+echo '<li><a href="'.$CFG->wwwroot."/local/gim/index.php".'">'.get_string('inicio','local_gim').'</a></li>';
+echo '<li><a href="'.$CFG->wwwroot."/local/gim/projects.php".'">'.get_string('explorar','local_gim').'</a></li>';
 
 echo '</ul>';
 //fin headermenu
