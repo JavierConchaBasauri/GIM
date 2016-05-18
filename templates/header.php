@@ -6,7 +6,7 @@
 //MENU
 echo '<div id="encabezado">';
 echo '<div id="titulo">';
-echo "<h5>Bienvenido a </h5>";
+echo '<h5>'.get_string('welcome','local_gim').'</h5>';
 echo '<h1>'.get_string('pluginname','local_gim').'</h1>';
 echo '<h3>'.get_string('slogan','local_gim').'</h3>';
 echo '</div>';

@@ -17,6 +17,7 @@
 //English version 
 $string ['pluginname'] = 'Foundastic!';
 $string ['name'] = 'Foundastic!';
+$string ['welcome'] = 'Welcome to';
 $string['slogan']= 'Where good ideas can be built';
 $string['question']='What is Foundastic?';
 $string['descp']= 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.
@@ -47,12 +48,20 @@ $string['nom-aproy']= 'Name';
 $string['des-aproy']= 'Description';
 $string['img-aproy']= 'Imagen Upload';
 $string['vid-aproy']= 'Video Upload';
+$string['mul-aproy']= 'Upload Files';
 $string['sav-aproy']= 'Save';
 $string['del-aproy']= 'Delete All';
 
 $string['searchb']= 'Enter the text you want to find and press ENTER. To cancel the ESCAPE key.';
+$string['proy-verp']= 'Project';
+$string['desc-verp']= 'Brief Description';
+$string['resp-verp']= 'Responsable';
+$string['nop-verp']= 'There are no projects yet.';
 $string['next']= 'Next';
 $string['previous']= 'Previous';
 
 $string["startproj"] = 'Start a Project';
 $string["seeproj"] = 'Find new Projects';
+
+$string["no-idproy"] = 'You must choose one project to search. Wait to be redirected or click on Continue';
+$string["personal-idproy"] = 'About the author:';
