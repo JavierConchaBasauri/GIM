@@ -153,9 +153,13 @@ input[type="search"]{
     padding: 15px 0;
 }
 #divContenido{
+	width: 80%;
     text-align: center;
     padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 #divContenido a:hover{
     background: #fff;
     color: #000;
@@ -244,15 +248,16 @@ a.siguiente {
     background-color: #f1f1f1;
     display: table;
     display: table-cell;
-    vertical-align: middle;
+    //vertical-align: middle;
     webkit-border-radius: 70px 0px 70px 0px;-moz-border-radius: 70px 0px 70px 0px;border-radius: 70px 0px 70px;
 }
+
 #cajaverp h1{
     font-weight:bold;
     color:#000000;
     border: 2px dotted #B5A759;
     letter-spacing:1pt;
-    word-spacing:7pt;
+    word-spacing:4pt;
     font-size:21px;
     text-align:justify;
     font-family:courier new, courier, monospace;
@@ -262,19 +267,34 @@ a.siguiente {
 }
 #cajavermedia{
     position: relative;
+    margin-top:30px;
+    text-align: center;
     left:40%;
     width:450px;
     height:10px;
     //border-radius: 5px;
     border: solid 4px #f1f1f1;
     background-color: #f1f1f1;
+    
     display: table;
     display: table-cell;
-    vertical-align: middle;
+    //vertical-align: middle;
     webkit-border-radius: 80px;-moz-border-radius: 80px;border-radius: 80px;
-
 }
-#cajaverdueño{
+#cajavermedia h1{
+    font-weight:bold;
+    color:#000000;
+    border: 2px dotted #B5A759;
+    letter-spacing:1pt;
+    word-spacing:4pt;
+    font-size:18px;
+    text-align:justify;
+    font-family:courier new, courier, monospace;
+    line-height:2;
+    margin:12px;
+    padding:3px;
+}
+#cajaverdueno{
     top: 20px;
     background-color: #FFE5E5;
     clear: both;
@@ -297,3 +317,39 @@ a.siguiente {
 .tg th{font-family:Arial, sans-serif;font-size:20px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;color: #566594;}
 .tg .tg-huad{background-color:#FFE5E5}
 .tg .tg-i6eq{background-color:#FFE5E5;vertical-align:top}
+
+
+#cajamasvistos{
+    top: 40px;
+    background-color: #FFE5E5;
+    clear: both;
+    position: relative;
+    width: 100%;
+    font-family: 'lucida sans', sans-serif;
+    font-size: 90%;
+    height: 170px;
+    //border-radius: 5px;
+    border: solid 4px #FFE5E5;
+    padding: 20px 0 5px 0;
+    text-align: justify; 
+    color: #A8AA94;
+    margin: 0 0 0 0;
+    webkit-border-radius: 99px 0px 99px 0px;-moz-border-radius: 99px 0px 99px 0px;border-radius: 99px 0px 99px;
+}
+#cajamasvistos h4{
+	margin-left:40px;
+    color: #362C20;
+    letter-spacing: 0.2em;
+    padding: 0 0 5px 0;
+    line-height: 10px;
+}
+#tablamasvistos{
+	background-color:#FFE5E5;
+	border-collapse:collapse;border-spacing:0;border:none;margin:0px auto;
+}
+#tablamasvistostd{
+	font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;
+}
+#tablamasvistosth{
+	font-family:Arial, sans-serif;font-size:20px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;color: #566594;
+}

@@ -1,24 +1,23 @@
 <link rel="stylesheet" type="text/css" href="templates/css/style.css" />
- <link rel="stylesheet" type="text/css" href="js/ext/webmonsterTooltip/css/webmonster.Tooltip.css">
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script>
+
 <?php
 //MENU
-echo '<div id="encabezado">';
-echo '<div id="titulo">';
-echo '<h5>'.get_string('welcome','local_gim').'</h5>';
-echo '<h1>'.get_string('pluginname','local_gim').'</h1>';
-echo '<h3>'.get_string('slogan','local_gim').'</h3>';
-echo '</div>';
+echo html_writer::start_div(null, array('id'=>'encabezado'));
+echo html_writer::start_div(null, array('id'=>'titulo'));
+echo $OUTPUT->heading(get_string('welcome','local_gim'),5);
+echo $OUTPUT->heading(get_string('pluginname','local_gim'),1);
+echo $OUTPUT->heading(get_string('slogan','local_gim'),3);
+echo html_writer::end_div();
 
 //Header menu
-echo '<div id="navegador">';
-echo '<ul>';
+echo html_writer::start_div(null, array('id'=>'navegador'));
+echo html_writer::empty_tag('ul');
 
 echo '<li><a href="'.$CFG->wwwroot."/local/gim/index.php".'">'.get_string('inicio','local_gim').'</a></li>';
 echo '<li><a href="'.$CFG->wwwroot."/local/gim/projects.php".'">'.get_string('explorar','local_gim').'</a></li>';
 
-echo '</ul>';
+echo html_writer::empty_tag('/ul');
 //fin headermenu
-echo '</div>';
-echo '</div><hr>';
+echo html_writer::end_div();
+echo html_writer::end_div();
+echo html_writer::empty_tag('hr');

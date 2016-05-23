@@ -35,12 +35,12 @@ $estado = optional_param('st', 0, PARAM_ALPHANUM);
         include 'proyectos/form.php';
     }
 //FORMULARIO EN MODO HTML (NO FUNCIONA)
-    if ($estado == 2) {
+    /*if ($estado == 2) {
         if (!isset($_REQUEST['proyname'])) {
             include 'proyectos/formulario.php';
         } else {
             include 'uplproject.php';
         }
-    }
+    }*/
 include 'templates/footer.php'; // pie de pagina
 echo $OUTPUT->footer();

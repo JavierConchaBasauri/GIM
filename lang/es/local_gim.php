@@ -53,6 +53,7 @@ $string['sav-aproy']= 'Guardar';
 $string['del-aproy']= 'Borrar todo';
 
 $string['searchb']= 'Digite el texto que deseas encontrar y presiona ENTER. Para cancelar la tecla ESCAPE.';
+$string['noresults']= 'No hay resultados, intente otra b&uacute;squeda';
 $string['proy-verp']= 'Proyecto';
 $string['desc-verp']= 'Descripcion breve';
 $string['resp-verp']= 'Responsable';
@@ -62,6 +63,13 @@ $string['previous']= 'Anterior';
 
 $string["startproj"] = 'Empezar un Proyecto';
 $string["seeproj"] = 'Descubre nuevos Proyecto';
+$string["mostseen"] = 'Proyectos mas vistos';
+$string["views"] = 'Vistas: ';
+$string["finan"] = 'Monto Contribuido: ';
 
 $string["no-idproy"] = 'Debes elegir un proyecto al cual poder buscar. Espera para ser redirigido o haz click en continuar';
 $string["personal-idproy"] = 'Sobre el autor:';
+$string["nomedia"] = 'No hay archivos multimedia disponibles en este proyecto';
+$string["media"] = 'Archivos Multimedia del Proyecto:';
+$string["creado"] = 'Publicado el ';
+$string["modificado"] = 'Modificado hace ';

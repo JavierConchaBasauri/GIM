@@ -53,6 +53,7 @@ $string['sav-aproy']= 'Save';
 $string['del-aproy']= 'Delete All';
 
 $string['searchb']= 'Enter the text you want to find and press ENTER. To cancel the ESCAPE key.';
+$string['noresults']= 'There are no results, try again';
 $string['proy-verp']= 'Project';
 $string['desc-verp']= 'Brief Description';
 $string['resp-verp']= 'Responsable';
@@ -62,6 +63,13 @@ $string['previous']= 'Previous';
 
 $string["startproj"] = 'Start a Project';
 $string["seeproj"] = 'Find new Projects';
+$string["mostseen"] = 'Most seen projects';
+$string["views"] = 'Views: ';
+$string["finan"] = 'Contributed Amount: ';
 
 $string["no-idproy"] = 'You must choose one project to search. Wait to be redirected or click on Continue';
 $string["personal-idproy"] = 'About the author:';
+$string["nomedia"] = 'There are no multimedia files for this project.';
+$string["media"] = 'Multimedia files of the project:';
+$string["creado"] = 'Publicated on ';
+$string["modificado"] = 'Modified ';

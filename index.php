@@ -17,6 +17,7 @@ $PAGE->set_url($CFG->wwwroot.'/local/gim/index.php');
 $PAGE->navbar->add($nombre);
 $agpro=$CFG->wwwroot.'/local/gim/projects.php?st=1'; // direccion de la pagina para agregar proyectos
 $vpro=$CFG->wwwroot.'/local/gim/projects.php';  // direccion de la pagina para ver proyectos
+$vpr=$CFG->wwwroot.'/local/gim/vprojects.php?id='; // direccion de la pagina para ver un proyecto segun su id
 
 
 
@@ -24,41 +25,97 @@ echo $OUTPUT->header();
 
 include 'templates/header.php'; //encabezado de pagina
 // Actual content goes here
-//caja que es..?
-echo '<div id="flotizq2">';
-echo '<h2>'.get_string('question','local_gim').'</h2>';
+//caja "que es..?"
+echo html_writer::start_div(null, array('id'=>'flotizq2'));
+echo $OUTPUT->heading(get_string('question','local_gim'), 2);
 echo get_string('descp','local_gim');
-echo 'prueba4';
-echo '</div>';
+echo html_writer::end_div();
 //Caja video
-echo '<div id="flotder">';
-echo '<video width="320" height="240" controls>
+echo html_writer::start_div(null, array('id'=>'flotder'));
+echo html_writer::empty_tag('video', array('src' => 'templates/media/TOTO - Africa [LIVE].mp4', 'type' => 'video/mp4', 'width'=>'320', 'height' => '240','controls'=> ''));
+/*echo '<video width="320" height="240" controls>
   <source src="templates/media/TOTO - Africa [LIVE].mp4" type="video/mp4">
-</video>';
+</video>';*/
 //echo '<img src="templates/media/IMG_5320.jpg" alt="Smiley face" height="380" width="480">';
-echo '</div>';
+echo html_writer::end_div();
 
 //CAJA CENTRO, CONTIENE CAJAS DERECHA e IZQUIERDA
-echo '<div id="cuerpo">';
-echo '<hr>';
+echo html_writer::start_div(null, array('id'=>'cuerpo'));
+echo html_writer::empty_tag('hr');
 //caja flotante izquierda empezar un proyecto
-echo '<div id="flotizq">';
-echo '<div id="caja" class="vertical-centered-text">';
-
-
-echo '<a href="'.$agpro.'">'.get_string('startproj','local_gim').'</a>';
-echo '</div>';
-echo '</div>';
+echo html_writer::start_div(null, array('id'=>'flotizq'));
+echo html_writer::start_div('vertical-centered-text', array('id'=>'caja'));
+echo html_writer::link($agpro, get_string('startproj','local_gim'));
+echo html_writer::end_div();
+echo html_writer::end_div();
 
 
 //caja flotante derecha ver proyectos
-echo '<div id="flotder">';
-echo '<div id="cajader">';
-echo '<a href="'.$vpro.'">'.get_string('seeproj','local_gim').'</a>';
-echo '</div>';
-echo '</div>';
+echo html_writer::start_div(null, array('id'=>'flotder'));
+echo html_writer::start_div(null, array('id'=>'cajader'));
+echo html_writer::link($vpro, get_string('seeproj','local_gim'));
+echo html_writer::end_div();
+echo html_writer::end_div();
 
-//Fin contenido index
-echo '</div>';
+
+echo html_writer::end_div();
+
+//CAJAS FINALES
+//busco los dos proyectos mas visitados para luego mostrarlos en el index como los "mas vistos"
+$limit = 2;
+$proyectos = $DB->get_records ( 'local_projects' );
+$select="id > 0 ORDER BY vistas DESC limit $limit";
+$results = $DB->get_records_select('local_projects',$select);
+$max = array();
+$id = array();
+$vistas = array();
+$financiacion=array();
+//recorro el resultado del query, que es un array. Luego guardo los elementos recorridos en otro arreglo conveniente
+foreach($results as $result){
+	$max []= $result->projectname;
+	$id[] =$result->id;
+	$vistas[] =$result->vistas;
+	$financiacion[] =$result->financiacion;
+	//echo $result->projectname.' '.$result->vistas.'<br>';
+}
+echo html_writer::start_div ( null, array ('id' => 'cajamasvistos'));
+if (count ( $proyectos ) < 1) {
+	echo get_string ( 'nop-verp', 'local_gim' );
+} else {
+	echo $OUTPUT->heading(get_string ( 'mostseen', 'local_gim' ),4);
+	//se muestra la poscion [0] de los arreglos convenientes creados anteriormente
+	echo html_writer::start_div(null, array('id'=>'flotizq'));
+	echo html_writer::start_div('vertical-centered-text', array('id'=>'caja'));
+	echo html_writer::link($vpr.array_values($id)[0], array_values($max)[0]);
+	echo html_writer::label(get_string('views','local_gim').$vistas[0], null);
+	echo html_writer::label(get_string('finan','local_gim').$financiacion[0], null);
+	echo html_writer::end_div();
+	echo html_writer::end_div();
+	//se muestra la poscion [1] de los arreglos convenientes creados anteriormente
+	echo html_writer::start_div(null, array('id'=>'flotder'));
+	echo html_writer::start_div('vertical-centered-text', array('id'=>'caja'));
+	echo html_writer::link($vpr.array_values($id)[1], array_values($max)[1]);
+	echo html_writer::label(get_string('views','local_gim').$vistas[1], null);
+	echo html_writer::label(get_string('finan','local_gim').$financiacion[1], null);
+	echo html_writer::end_div();
+	echo html_writer::end_div();
+/* NO SIRVE
+$proyecto = $DB->get_records('local_projects', null, 'vistas DESC', 'id,projectname,vistas', $limit);
+for($i=1; $i <= $limit;$i++){
+	echo $proyecto[$i]->projectname.html_writer::empty_tag('br');
+}
+echo $proyecto[1]->projectname;
+echo $proyecto[2]->projectname;
+$sql = 'SELECT `id`, `projectname`, `projectdescription`, `vistas`, `userid`, `financiacion`, `timecreated`, `timemodified` FROM mdl_local_projects  ORDER BY `vistas` DESC LIMIT 2';
+$proyectos = $DB->get_records_sql($sql);
+
+echo $proyectos[1]->projectname;
+echo $proyectos[2]->projectname;*/
+}
+echo html_writer::end_div();
+
+
+
+
 include 'templates/footer.php'; // pie de pagina
 echo $OUTPUT->footer();

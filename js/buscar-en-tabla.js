@@ -1,6 +1,7 @@
 //cali rojas
 //lewebmonster.com
 
+
 $(function(){
 //funcion para buscar en una tabla con jQuery
 	$.fntBuscarEnTabla=function(strCadena,strIDdeTabla){
@@ -50,7 +51,7 @@ $(function(){
 					$('<td>',{
 						colspan: iColumnas,
 						align: 'center',
-						html: '<em>No hay resultados, intente otra b&uacute;squeda</em>'
+						html: text
 					})
 				).appendTo($objTabla.find('tbody'));
 		}
