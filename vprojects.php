@@ -14,6 +14,7 @@ require_once ($CFG->libdir . '/completionlib.php');
 require_login ();
 // Global
 global $USER, $DB, $CFG;
+$moodle = $CFG->wwwroot;
 $nombre = get_string ( 'pluginname', 'local_gim' ); // nombre del sitio
 
 $PAGE->set_context ( get_system_context () );

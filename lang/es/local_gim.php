@@ -42,6 +42,7 @@ $string['descp']= 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.
    Proin lectus purus, vehicula et, cursus ut, nonummy et, diam.';
 $string ['inicio'] = 'Inicio';
 $string ['explorar'] = 'Explorar';
+$string ['mypro'] = 'Mis proyectos';
 
 $string['tit-aproy']= 'Crear un Proyecto';
 $string['nom-aproy']= 'Nombre';
@@ -60,6 +61,12 @@ $string['resp-verp']= 'Responsable';
 $string['nop-verp']= 'No hay Proyectos aun.';
 $string['next']= 'Siguiente';
 $string['previous']= 'Anterior';
+$string['actions']= 'Acciones';
+$string['total']= 'Total de proyectos: ';
+$string["viewsmyp"] = 'Vistas';
+$string["finanmyp"] = 'Monto Contribuido';
+$string["hello"] = 'Hola ';
+$string["noproy"] = 'No tienes proyectos creados';
 
 $string["startproj"] = 'Empezar un Proyecto';
 $string["seeproj"] = 'Descubre nuevos Proyecto';
@@ -67,6 +74,11 @@ $string["mostseen"] = 'Proyectos mas vistos';
 $string["views"] = 'Vistas: ';
 $string["finan"] = 'Monto Contribuido: ';
 
+$string["bsuccess"] = 'Tu proyecto ha sido borrado con exito';
+$string["cancelbpro"] = 'Haz seleccionado que no deseas borrar el proyecto, seras redireccionado. Tu proyecto a quedado intacto.';
+$string["sure"] = 'Estas seguro que deseas eliminar el proyecto?';
+$string["borrar"] = 'Eliminar Proyecto';
+$string["no-idbproy"] = 'Debes elegir un proyecto que te pertenezca para poder borrarlo!';
 $string["no-idproy"] = 'Debes elegir un proyecto al cual poder buscar. Espera para ser redirigido o haz click en continuar';
 $string["personal-idproy"] = 'Sobre el autor:';
 $string["nomedia"] = 'No hay archivos multimedia disponibles en este proyecto';

@@ -42,7 +42,7 @@ class agpro_form extends moodleform {
         
         $this->add_action_buttons();
     }
-
+//Funcion no agregada al lib.php para un mejor entendimiento del funcionamiento de la misma
 //Custom validation should be added here
     function validation($data, $files) {
         $errors = parent::validation($data, $files);

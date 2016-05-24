@@ -353,3 +353,34 @@ a.siguiente {
 #tablamasvistosth{
 	font-family:Arial, sans-serif;font-size:20px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;color: #566594;
 }
+
+#myproject{
+    background-color: #FFE5E5;
+    clear: both;
+    position: relative;
+    width: 100%;
+    font-family: 'lucida sans', sans-serif;
+    font-size: 90%;
+    height: 140px;
+    border: solid 4px #FFE5E5;
+    padding: 20px 0 5px 0;
+    text-align: center; 
+    color: #A8AA94;
+    margin: 0 0 0 0;
+    webkit-border-radius: 80px 0px 80px 0px;-moz-border-radius: 80px 0px 80px 0px;border-radius: 80px 0px 80px;
+}
+#myproject h1{
+	position:static;
+	line-height: 40px;
+}
+#myproject img{
+	margin-left:30px;
+	float:left;
+}
+
+#bproy h2{
+    font-size: 160%;
+    padding: 9px 0 5px 0;
+    color: red;
+    letter-spacing: 0.1em;
+}

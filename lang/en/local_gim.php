@@ -42,6 +42,7 @@ $string['descp']= 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.
    Proin lectus purus, vehicula et, cursus ut, nonummy et, diam.';
 $string ['inicio'] = 'Home';
 $string ['explorar'] = 'Explore';
+$string ['mypro'] = 'My Projects';
 
 $string['tit-aproy']= 'Build a Proyect';
 $string['nom-aproy']= 'Name';
@@ -60,6 +61,12 @@ $string['resp-verp']= 'Responsable';
 $string['nop-verp']= 'There are no projects yet.';
 $string['next']= 'Next';
 $string['previous']= 'Previous';
+$string['actions']= 'Actions';
+$string['total']= 'Total of projects: ';
+$string["viewsmyp"] = 'Views';
+$string["finanmyp"] = 'Contributed Amount';
+$string["hello"] = 'Hello ';
+$string["noproy"] = 'You dont own any project yet';
 
 $string["startproj"] = 'Start a Project';
 $string["seeproj"] = 'Find new Projects';
@@ -67,6 +74,11 @@ $string["mostseen"] = 'Most seen projects';
 $string["views"] = 'Views: ';
 $string["finan"] = 'Contributed Amount: ';
 
+$string["bsuccess"] = 'Your project has been successfully deleted.';
+$string["cancelbpro"] = 'You have selected that you dont want to delete the project, now you are going to be redirected. There are no changes to your project.';
+$string["sure"] = 'Are you sure that you want to delete the project?';
+$string["borrar"] = 'Delete Project';
+$string["no-idbproy"] = 'You must choose a project that belongs to you in order to delete it!';
 $string["no-idproy"] = 'You must choose one project to search. Wait to be redirected or click on Continue';
 $string["personal-idproy"] = 'About the author:';
 $string["nomedia"] = 'There are no multimedia files for this project.';

@@ -13,8 +13,9 @@ echo html_writer::end_div();
 echo html_writer::start_div(null, array('id'=>'navegador'));
 echo html_writer::empty_tag('ul');
 
-echo '<li><a href="'.$CFG->wwwroot."/local/gim/index.php".'">'.get_string('inicio','local_gim').'</a></li>';
-echo '<li><a href="'.$CFG->wwwroot."/local/gim/projects.php".'">'.get_string('explorar','local_gim').'</a></li>';
+echo html_writer::empty_tag('li').html_writer::link ($CFG->wwwroot."/local/gim/index.php",get_string('inicio','local_gim')).html_writer::empty_tag('/li');
+echo html_writer::empty_tag('li').html_writer::link ($CFG->wwwroot."/local/gim/projects.php",get_string('explorar','local_gim')).html_writer::empty_tag('/li');
+echo html_writer::empty_tag('li').html_writer::link ($CFG->wwwroot."/local/gim/myprojects.php",get_string('mypro','local_gim')).html_writer::empty_tag('/li');
 
 echo html_writer::empty_tag('/ul');
 //fin headermenu

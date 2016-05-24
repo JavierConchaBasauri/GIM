@@ -7,3 +7,5 @@ Proyecto Fundastic
 Programado por Javier Concha Basauri
 
 23-05-2016 Wireframe completo
+
+BUG ON BPPROY.PHP gonna fix it soon
