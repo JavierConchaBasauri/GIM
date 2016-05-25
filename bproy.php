@@ -41,9 +41,6 @@ $proyecto = $DB->get_record ( 'local_projects', array (
 if ($proyecto->userid != $userid) {
 	redirect ( $project_page, '<center>' . get_string ( 'no-idbproy', 'local_gim' ) . '</center>', 3 );
 } else {
-	echo html_writer::start_div(null, array('id'=>'bproy'));
-	echo $OUTPUT->heading ( get_string ( 'sure', 'local_gim' ), 2 );
-	echo html_writer::end_div ();
 	class bpro_form extends moodleform {
 		
 		// Add elements to form
@@ -100,6 +97,9 @@ if ($proyecto->userid != $userid) {
 			redirect ( $project_page, '<center>' . get_string ( 'cancelbpro', 'local_gim' ) . '</center>', 3 );
 		}
 	} else {
+		echo html_writer::start_div(null, array('id'=>'bproy'));
+		echo $OUTPUT->heading ( get_string ( 'sure', 'local_gim' ), 2 );
+		echo html_writer::end_div ();
 		// this branch is executed if the form is submitted but the data doesn't validate and the form should be redisplayed
 		// or on the first display of the form.
 		// Set default data (if any)
