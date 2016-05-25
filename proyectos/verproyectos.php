@@ -1,7 +1,25 @@
 <?php
 global $DB;
 $proyectos = $DB->get_records ( 'local_projects' );
-if (count ( $proyectos ) < 1) {
+$select="userid > 0 ORDER BY id ASC";
+$results = $DB->get_records_select('local_projects',$select);
+$name = array();
+$descp = array();
+$id = array();
+$owner = array();
+$vistas = array();
+$financiacion=array();
+//recorro el resultado del query, que es un array. Luego guardo los elementos recorridos en otro arreglo conveniente
+foreach($results as $result){
+	$name []= $result->projectname;
+	$descp []= $result->projectdescription;
+	$id[] =$result->id;
+	$vistas[] =$result->vistas;
+	$owner[] =$result->userid;
+	$financiacion[] =$result->financiacion;
+	//echo $result->projectname.' '.$result->vistas.'<br>';
+}
+if (count ( $results ) < 1) {
 	echo get_string ( 'nop-verp', 'local_gim' );
 } else {
 	echo html_writer::start_div ( null, array (
@@ -26,6 +44,7 @@ if (count ( $proyectos ) < 1) {
 	 * }
 	 * echo '</table>';
 	 */
+	
 	$table = new html_table ();
 	$table->head = array (
 			get_string ( 'proy-verp', 'local_gim' ),
@@ -35,15 +54,15 @@ if (count ( $proyectos ) < 1) {
 	echo html_writer::start_div ( null, array (
 			'id' => 'tblTabla' 
 	) );
-	for($i = 1; $i <= count ( $proyectos ); $i ++) {
-		$userid = $proyectos [$i]->userid; // obtengo el id del usuario dueño del proyecto en forma de string
+	for($i = 0; $i < count ( $results ); $i ++) {
+		$userid = $owner[$i]; // obtengo el id del usuario dueño del proyecto en forma de string
 		$useridstring = $userid; // Guardo el id del usuario como string en otra variable
 		$userid = str_split ( $userid ); // cambio el id del usuario de forma. string -> array. para poder usarlo en la funcion get_record_sql
 		$responsable = $DB->get_record_sql ( 'SELECT firstname,lastname FROM {user} WHERE id = ?', $userid ); // Busco el nombre del dueño del proyecto
 		$nombre = $responsable->firstname . ' ' . $responsable->lastname;
 		// muestro los datos
-		$proynomb = wordwrap ( $proyectos [$i]->projectname, 30, "<br />\n" );
-		$proydesc = wordwrap ( substr (strip_tags( $proyectos [$i]->projectdescription), 0, 250 ), 70, "<br />\n" );
+		$proynomb = wordwrap ( $name[$i], 30, "<br />\n" );
+		$proydesc = wordwrap ( substr (strip_tags( $descp[$i]), 0, 250 ), 70, "<br />\n" );
 		$nombre = wordwrap ( $nombre, 30, "<br />\n" );
 		$row = new html_table_row ( array (
 				html_writer::link ( $moodle . '/local/gim/vprojects.php?id=' . $i, $proynomb ),
