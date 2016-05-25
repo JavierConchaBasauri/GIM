@@ -54,7 +54,9 @@ foreach($results as $result){
 echo html_writer::start_div ( null, array (
 		'id' => 'myproject'
 ) );
+//query para seleccionar la imagen del usuario
 $rs = $DB->get_recordset_select ( "user", "deleted = 0 AND picture > 0 AND id = $userid", array (), "lastaccess DESC", user_picture::fields () );
+//recorro la query y luego muestro la imagen
 foreach ( $rs as $user ) {
 		echo "<a href=\"$CFG->wwwroot/user/view.php?id=$user->id&amp;course=1\" " . "title=\"$fullname\">";
 		echo $OUTPUT->user_picture ( $user, array (
@@ -62,24 +64,28 @@ foreach ( $rs as $user ) {
 		) );
 		echo "</a> \n";
 	}
+	//mensaje de saludo
 	echo $OUTPUT->heading ( get_string ( 'hello', 'local_gim' ).' '.$USER->firstname, 1 );
+	//si tiene proyectos, se señala la cantidad de los mismos
 	if(count ( $results ) >0){
 	echo $OUTPUT->heading ( (get_string ( 'total', 'local_gim' ). count($results) ), 2 );
 	}
+	// si no tiene proyectos, se señala que no tiene
 	elseif(count($results)==0){
 		echo $OUTPUT->heading ( get_string ( 'noproy', 'local_gim' ), 2 );
 	}
 	echo html_writer::end_div();
-
+	// comienzo de la caja de la tabla
 	echo html_writer::start_div ( null, array (
 			'id' => 'tablaun'
 	) );
+	//si hay resultados (proyectos) se muestra el buscador
 	if(count ( $results ) >0){
 	echo 'Buscar:&nbsp<input type="search" id="txtBuscar" autofocus placeholder="' . get_string ( 'searchb', 'local_gim' ) . '">';
 	echo html_writer::start_div ( null, array (
 			'id' => 'divContenido'
 	) );
-	
+	//luego del buscado, la tabla
 	$table = new html_table ();
 	$table->head = array (
 			get_string ( 'proy-verp', 'local_gim' ),
@@ -93,10 +99,11 @@ foreach ( $rs as $user ) {
 	) );
 	for($i = 0; $i < count ( $results ); $i ++) {
 		
-		// muestro los datos
+		// arreglo los datos (formato)
 		$proynomb = wordwrap ( $name[$i], 30, "<br />\n" );
 		$proydesc = wordwrap ( substr (strip_tags( $descp[$i]), 0, 250 ), 60, "<br />\n" );
 		$nombre = wordwrap ( $nombre, 30, "<br />\n" );
+		//muestro los datos en la tabla
 		$row = new html_table_row ( array (
 				html_writer::link ( $moodle . '/local/gim/vprojects.php?id=' . $id[$i], $proynomb ),
 				$proydesc,
