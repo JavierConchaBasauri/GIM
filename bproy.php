@@ -24,6 +24,7 @@ $PAGE->set_url ( $CFG->wwwroot . '/local/gim/bproy.php' );
 $PAGE->navbar->add ( $nombre );
 $self = $CFG->wwwroot . '/local/gim/bproy.php';
 $project_page = $CFG->wwwroot . '/local/gim/myprojects.php';
+$bproject_page = $CFG->wwwroot . '/local/gim/bproy.php?bid=';
 if (! defined ( 'MOODLE_INTERNAL' )) {
 	die ( 'Direct access to this script is forbidden.' ); // / It must be included from a Moodle page
 }
@@ -33,7 +34,7 @@ echo $OUTPUT->header ();
 
 include 'templates/header.php'; // encabezado de pagina
 $userid = $USER->id;
-$bid = optional_param ( 'bid', 0, PARAM_INT );
+$bid = optional_param ( 'bid', 0, 	PARAM_INT );
 $proyecto = $DB->get_record ( 'local_projects', array (
 		'id' => $bid 
 ) );
@@ -50,6 +51,8 @@ if ($proyecto->userid != $userid) {
 			global $CFG;
 			
 			$mform = $this->_form; // Don't forget the underscore!
+			$instance = $this->_customdata;
+			$bid = $instance ['bid'];
 			
 			$radioarray = array ();
 			$radioarray [] = $mform->createElement ( 'radio', 'yesno', '', get_string ( 'yes' ), 1, $attributes );
@@ -77,16 +80,18 @@ if ($proyecto->userid != $userid) {
 		}
 	}
 	
-	$mform = new bpro_form ();
+	$mform = new bpro_form (null, array('bid'=>$bid));
 	// Form processing and displaying is done here
 	if ($mform->is_cancelled ()) {
 		// Handle form cancel operation, if cancel button is present on form
-		redirect ($project_page );
+		redirect ( $project_page, '<center>' . get_string ( 'cancelbpro', 'local_gim' ) . '</center>', 3 );
 	} else if ($fromform = $mform->get_data ()) {
 		// In this case you process validated data. $mform->get_data() returns data posted in form.
 		// y asigno los valores a guardar en la base de datos que no vienen del formulario. como por ej userid y timecreated
 		$toform = new stdClass ();
 		$toform->yesno = $fromform->yesno;
+		$toform->bid = $fromform->bid;
+		$bid = $toform->bid;
 		if($toform->yesno == 1){
 		$DB->delete_records('local_projects', array('id'=> $bid));
 		redirect ( $project_page, '<center>' . get_string ( 'success', 'local_gim' ) . '</center>', 3 );
