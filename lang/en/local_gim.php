@@ -74,7 +74,7 @@ $string["mostseen"] = 'Most seen projects';
 $string["views"] = 'Views: ';
 $string["finan"] = 'Contributed Amount: ';
 
-$string["bsuccess"] = 'Your project has been successfully deleted.';
+$string["success"] = 'Your project has been successfully deleted.';
 $string["cancelbpro"] = 'You have selected that you dont want to delete the project, now you are going to be redirected. There are no changes to your project.';
 $string["sure"] = 'Are you sure that you want to delete the project?';
 $string["borrar"] = 'Delete Project';

@@ -74,7 +74,7 @@ $string["mostseen"] = 'Proyectos mas vistos';
 $string["views"] = 'Vistas: ';
 $string["finan"] = 'Monto Contribuido: ';
 
-$string["bsuccess"] = 'Tu proyecto ha sido borrado con exito';
+$string["success"] = 'Tu proyecto ha sido borrado con exito';
 $string["cancelbpro"] = 'Haz seleccionado que no deseas borrar el proyecto, seras redireccionado. Tu proyecto a quedado intacto.';
 $string["sure"] = 'Estas seguro que deseas eliminar el proyecto?';
 $string["borrar"] = 'Eliminar Proyecto';
