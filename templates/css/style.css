@@ -86,7 +86,7 @@ h5, h6 {
 	padding: 20px 0 5px 0;
 	text-align: center;
 	color: #A8AA94;
-	margin: 35px 0 0 0;
+	margin: 60px 0 0 0;
 }
 
 #cuerpo {
@@ -333,7 +333,6 @@ a.siguiente {
 	padding: 20px 0 5px 0;
 	text-align: justify;
 	color: #A8AA94;
-	margin: 0 0 0 0;
 	webkit-border-radius: 99px 0px 99px 0px;
 	-moz-border-radius: 99px 0px 99px 0px;
 	border-radius: 99px 0px 99px;
@@ -486,7 +485,8 @@ a.siguiente {
 	border-radius: 40px;
 	background-color: #E3E0BC;
 }
-#navegadorproy h3{
+
+#navegadorproy h3 {
 	font-weight: bold;
 	color: #000000;
 	letter-spacing: 1pt;
@@ -502,7 +502,8 @@ a.siguiente {
 }
 
 #navegadorproy ul {
-	margin-top: 20px; list-style-type : none;
+	margin-top: 20px;
+	list-style-type: none;
 	text-align: center;
 	list-style-type: none;
 }
@@ -552,8 +553,66 @@ a.siguiente {
 		startColorstr=#819bcb, endColorstr=#536f9d);
 }
 
+#cajaversiesdueno {
+	top: 100px;
+	position: relative;
+	text-align: center;
+	width: 450px;
+	height: auto;
+	margin: auto;
+	bottom: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+	background-color: #6FE37B;
+	text-align: center;
+}
+#cajaversiesdueno h3{
+	font-weight: bold;
+	color: #000000;
+	letter-spacing: 1pt;
+	word-spacing: 2pt;
+	font-size: 16px;
+	text-align: justify;
+	font-family: courier new, courier, monospace;
+	line-height: 2;
+	margin: 12px;
+	padding: 3px;
+	display: inline;
+	text-align: center;
+}
+
+
+#tablaadmin {
+	text-align: center;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0px auto;
+}
+
+#tablaadmin th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	text-align:center;
+}
+
+#tablaadmin td {
+	background-color: #6FE37B;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	overflow: hidden;
+	word-break: normal;
+	text-align:center;
+}
+
 //
-lightbox /* Preload images */  
+lightbox /* Preload images */   
 body:after {
 	content: url(../images/close.png) url(../images/loading.gif)
 		url(../images/prev.png) url(../images/next.png);

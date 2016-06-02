@@ -90,3 +90,5 @@ $string["no-iddona"] = 'You must choose one project to donate. Wait to be redire
 $string["amount"] = 'You must donate a valid amount of money.';
 $string["donation"] = 'Donation amount: ';
 $string["successdon"] = 'You have successfully contributed to the project. Thank you very much!';
+$string["donreal"] = 'Realized to this project';
+$string["donby"] = 'Donated by';
