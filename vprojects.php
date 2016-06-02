@@ -129,6 +129,22 @@ if ($verproy == 0) {
 	
 	echo html_writer::end_div ();
 	// fin media
+	$idd = str_split ( $verproy );
+	$total = $DB->get_record_sql ( 'SELECT sum(monto) AS monto FROM {local_donations} WHERE idproject = ?', $idd ); // Busco los datos del proyecto asociados a su id
+	$total = $total->monto;
+	if ($total == '') {
+		$total = 0;
+	}
+	
+	echo html_writer::start_div(null, array('id'=>'navegadorproy'));
+	echo $OUTPUT->heading ( get_string ( 'finan', 'local_gim' ).' '.$total,3);
+	echo html_writer::empty_tag('ul');
+	
+	echo html_writer::empty_tag('li').html_writer::link ($CFG->wwwroot."/local/gim/donate.php?did=".$verproy,get_string('donate','local_gim')).html_writer::empty_tag('/li');
+	
+	echo html_writer::empty_tag('/ul');
+	//fin boton donar
+	echo html_writer::end_div();
 	
 	// comienzo caja "sobre el dueño"
 	echo html_writer::start_div ( null, array (

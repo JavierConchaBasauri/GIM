@@ -80,23 +80,35 @@ foreach($results as $result){
 }
 echo html_writer::start_div ( null, array ('id' => 'cajamasvistos'));
 if (count ( $proyectos ) < 1) {
-	echo get_string ( 'nop-verp', 'local_gim' );
+	echo $OUTPUT->heading( get_string ( 'nop-verp', 'local_gim' ));
 } else {
+	$idd = str_split ( $id[0] );
+	$total = $DB->get_record_sql( 'SELECT sum(monto) AS monto FROM {local_donations} WHERE idproject = ?',$idd); // Busco los datos del proyecto asociados a su id
+	$total = $total->monto;
+	if($total == ''){
+		$total = 0;
+	}
 	echo $OUTPUT->heading(get_string ( 'mostseen', 'local_gim' ),4);
 	//se muestra la poscion [0] de los arreglos convenientes creados anteriormente
 	echo html_writer::start_div(null, array('id'=>'flotizq'));
 	echo html_writer::start_div('vertical-centered-text', array('id'=>'caja'));
 	echo html_writer::link($vpr.array_values($id)[0], array_values($max)[0]);
 	echo html_writer::label(get_string('views','local_gim').$vistas[0], null);
-	echo html_writer::label(get_string('finan','local_gim').$financiacion[0], null);
+	echo html_writer::label(get_string('finan','local_gim').$total, null);
 	echo html_writer::end_div();
 	echo html_writer::end_div();
+	$idd = str_split ( $id[1] );
+	$total = $DB->get_record_sql( 'SELECT sum(monto) AS monto FROM {local_donations} WHERE idproject = ?',$idd); // Busco los datos del proyecto asociados a su id
+	$total = $total->monto;
+	if($total == ''){
+		$total = 0;
+	}
 	//se muestra la poscion [1] de los arreglos convenientes creados anteriormente
 	echo html_writer::start_div(null, array('id'=>'flotder'));
 	echo html_writer::start_div('vertical-centered-text', array('id'=>'caja'));
 	echo html_writer::link($vpr.array_values($id)[1], array_values($max)[1]);
 	echo html_writer::label(get_string('views','local_gim').$vistas[1], null);
-	echo html_writer::label(get_string('finan','local_gim').$financiacion[1], null);
+	echo html_writer::label(get_string('finan','local_gim').$total, null);
 	echo html_writer::end_div();
 	echo html_writer::end_div();
 /* NO SIRVE

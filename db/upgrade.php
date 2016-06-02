@@ -10,31 +10,27 @@ function xmldb_local_gim_upgrade($oldversion) {
     global $DB;
     // Loads ddl manager and xmldb classes.
     $dbman = $DB->get_manager();
-    if ($oldversion < 2016051800) {
-    
-    	// Define table local_projects to be dropped.
-    	$table = new xmldb_table('local_projects_has_videos');
-    
-    	// Conditionally launch drop table for local_projects.
-    	if ($dbman->table_exists($table)) {
-    		$dbman->drop_table($table);
-    	}
-    
-    	// Gim savepoint reached.
-    	upgrade_plugin_savepoint(true, 2016051800, 'local', 'gim');
-    }
-    if ($oldversion < 2016051800) {
-    
-    	// Define table local_projects to be dropped.
-    	$table = new xmldb_table('local_projects_has_images');
-    
-    	// Conditionally launch drop table for local_projects.
-    	if ($dbman->table_exists($table)) {
-    		$dbman->drop_table($table);
-    	}
-    
-    	// Gim savepoint reached.
-    	upgrade_plugin_savepoint(true, 2016051800, 'local', 'gim');
+    if ($oldversion < 2016051810) {
+
+        // Define table local_donations to be created.
+        $table = new xmldb_table('local_donations');
+
+        // Adding fields to table local_donations.
+        $table->add_field('id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, XMLDB_SEQUENCE, null);
+        $table->add_field('idusuario', XMLDB_TYPE_INTEGER, '20', null, XMLDB_NOTNULL, null, null);
+        $table->add_field('idproject', XMLDB_TYPE_INTEGER, '20', null, XMLDB_NOTNULL, null, null);
+        $table->add_field('monto', XMLDB_TYPE_INTEGER, '20', null, XMLDB_NOTNULL, null, null);
+
+        // Adding keys to table local_donations.
+        $table->add_key('primary', XMLDB_KEY_PRIMARY, array('id'));
+
+        // Conditionally launch create table for local_donations.
+        if (!$dbman->table_exists($table)) {
+            $dbman->create_table($table);
+        }
+
+        // Gim savepoint reached.
+        upgrade_plugin_savepoint(true, 2016051810, 'local', 'gim');
     }
     
     if ($oldversion < 2016051800) {

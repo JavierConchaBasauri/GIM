@@ -75,7 +75,7 @@ $string["views"] = 'Vistas: ';
 $string["finan"] = 'Monto Contribuido: ';
 
 $string["success"] = 'Tu proyecto ha sido borrado con exito';
-$string["cancelbpro"] = 'Haz seleccionado que no deseas borrar el proyecto, seras redireccionado. Tu proyecto a quedado intacto.';
+$string["cancelbpro"] = 'Has seleccionado que no deseas borrar el proyecto, seras redireccionado. Tu proyecto a quedado intacto.';
 $string["sure"] = 'Estas seguro que deseas eliminar el proyecto?';
 $string["borrar"] = 'Eliminar Proyecto';
 $string["no-idbproy"] = 'Debes elegir un proyecto que te pertenezca para poder borrarlo!';
@@ -85,3 +85,8 @@ $string["nomedia"] = 'No hay archivos multimedia disponibles en este proyecto';
 $string["media"] = 'Archivos Multimedia del Proyecto:';
 $string["creado"] = 'Publicado el ';
 $string["modificado"] = 'Modificado hace ';
+$string["donate"] = 'Financiar el proyecto';
+$string["no-iddona"] = 'Debes elegir un proyecto al cual poder donar. Espera para ser redirigido o haz click en continuar';
+$string["amount"] = 'Debes donar una cantidad valida de dinero.';
+$string["donation"] = 'Monto a donar: ';
+$string["successdon"] = 'Has aportado con exito al proyecto. Muchas gracias!';

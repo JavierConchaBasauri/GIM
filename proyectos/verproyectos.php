@@ -65,7 +65,7 @@ if (count ( $results ) < 1) {
 		$proydesc = wordwrap ( substr (strip_tags( $descp[$i]), 0, 250 ), 70, "<br />\n" );
 		$nombre = wordwrap ( $nombre, 30, "<br />\n" );
 		$row = new html_table_row ( array (
-				html_writer::link ( $moodle . '/local/gim/vprojects.php?id=' . $i, $proynomb ),
+				html_writer::link ( $moodle . '/local/gim/vprojects.php?id=' . $id[$i], $proynomb ),
 				$proydesc,
 				html_writer::link ( $moodle . '/user/profile.php?id=' . $useridstring, $nombre ) 
 		) );
