@@ -92,3 +92,4 @@ $string["donation"] = 'Monto a donar: ';
 $string["successdon"] = 'Has aportado con exito al proyecto. Muchas gracias!';
 $string["donreal"] = 'Donaciones realizadas a este proyecto';
 $string["donby"] = 'Donado por';
+$string["nodon"] = 'No hay donaciones para este proyecto';

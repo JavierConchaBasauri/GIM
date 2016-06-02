@@ -85,10 +85,19 @@ if ($verproy == 0) {
 			if ($file->get_filesize () > 0) {
 				// en esta condicion, veo si son archivos del tipo imagen para mostrarlos como tal
 				if ($file->get_mimetype () == 'image/bmp' || $file->get_mimetype () == 'image/vnd.dwg' || $file->get_mimetype () == 'image/x-dwg' || $file->get_mimetype () == 'image/gif' || $file->get_mimetype () == 'image/jpeg' || $file->get_mimetype () == 'image/png') {
-					echo html_writer::img ( $url, $filename, array (
+					/*echo html_writer::img ( $url, $filename, array (
 							'width' => '400',
 							'height' => '300' 
-					) );
+					) );*/
+					echo html_writer::link( $url, html_writer::img( $url, $filename, array (
+							'width' => '200',
+							'height' => '150',
+							'class' => 'example-image'
+					) ), array(
+							'class' => 'example-image-link',
+							'data-lightbox' => 'example-set',
+							'data-title'=> $filename
+					));
 					echo html_writer::empty_tag ( 'br' );
 					$ext [1] = 'jpeg';
 					// en esta condicion veo si son archivos del tipo video para mostrarlos como tal
@@ -197,7 +206,7 @@ if ($verproy == 0) {
 			$donadorid [] = $result->idusuario;
 			$monto [] = $result->monto;
 		}
-		if ($results > 0) {
+		if ( count ( $results )> 0) {
 			echo html_writer::empty_tag ( 'br' ) . $OUTPUT->heading ( get_string ( 'donreal', 'local_gim' ), 3 );
 			echo html_writer::start_div ( null, array (
 					'id' => 'tablaadmin'
@@ -222,8 +231,11 @@ if ($verproy == 0) {
 			}
 			echo html_writer::table ( $table );
 			echo html_writer::end_div ();
+			echo html_writer::empty_tag ( 'br' );
 		}
-		echo html_writer::empty_tag ( 'br' );
+		if(count ( $results ) == 0){
+		echo $OUTPUT->heading ( get_string ( 'nodon', 'local_gim' ), 3 );
+		}
 		echo html_writer::end_div ();
 	} else {
 	}
